@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%23231C17%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27none%27 stroke=%27%23E0D8C4%27 stroke-width=%271.5%27/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Макеты студии массажа</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
+<style>
+
+:root {
+  --bg: #F5F1E8; --surface: #ECE6D9; --ink: #3A2E25; --muted: #6B5F54; --olive: #3E4636; --line: #D6CFC2; --accent: #066F6B;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --text: "Golos Text", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1F231B; --surface: #2A3024; --ink: #EDE6D6; --muted: #B8AE9E; --olive: #C9D3BC; --line: #3B4232; --accent: #3FC9C3; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #1F231B; --surface: #2A3024; --ink: #EDE6D6; --muted: #B8AE9E; --olive: #C9D3BC; --line: #3B4232; --accent: #3FC9C3; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--text); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { display: grid; gap: 14px; max-width: 70ch; margin-bottom: 40px; }
+.brand { font: 500 13px/1.3 var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 400 clamp(32px, 5vw, 52px)/1.08 var(--display); margin: 0; text-wrap: balance; color: var(--olive); }
+.lead { margin: 0; color: var(--ink); }
+.note { margin: 0; color: var(--muted); font-size: 15px; }
+
+.variant { display: grid; gap: 20px; padding-block: 36px; border-top: 1px solid var(--line); }
+.vhead { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; align-items: baseline; }
+.vhead h2 { margin: 0; font: 400 clamp(24px, 3vw, 34px)/1.15 var(--display); color: var(--olive); text-wrap: balance; }
+.letter { font: 600 15px var(--text); color: var(--muted); margin-right: 10px; }
+.score { font: 500 15px var(--text); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.score b { font-weight: 600; color: var(--ink); font-size: 20px; }
+.idea { margin: 0; max-width: 72ch; }
+.pros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; max-width: 980px; }
+.pros div { min-width: 0; font-size: 15px; }
+.pros span { display: block; font-weight: 600; color: var(--muted); font-size: 13px; letter-spacing: .04em; margin-bottom: 2px; }
+.shots { display: grid; grid-template-columns: minmax(0, 3.2fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.shots figure { margin: 0; display: grid; gap: 6px; min-width: 0; }
+.shots img { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--surface); }
+figcaption { font-size: 13px; color: var(--muted); }
+.extra { grid-column: 1 / -1; }
+.open { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px;
+  background: var(--olive); color: var(--bg); text-decoration: none; font: 500 15px var(--text); border-radius: 2px; }
+.open:hover { filter: brightness(1.12); }
+.open:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.early { margin: 40px 0 0; font: 400 clamp(22px, 2.6vw, 30px)/1.2 var(--display); color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 14px; display: grid; gap: 6px; }
+
+@media (max-width: 720px) {
+  .shots { grid-template-columns: minmax(0, 1fr) minmax(0, .42fr); gap: 10px; }
+  .pros { grid-template-columns: minmax(0, 1fr); }
+  .vhead { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+
+.variant { gap: 14px; padding-block: 28px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.more { max-width: 980px; }
+.more > summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; list-style: none; color: var(--muted); font: 500 15px var(--text); }
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::after { content: "+"; font-size: 18px; line-height: 1; }
+.more[open] > summary::after { content: "\2212"; }
+.more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.more[open] { display: grid; gap: 14px; }
+.more .extra { margin: 0; display: grid; gap: 6px; }
+.more .extra img { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--surface); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">Сайт для студии массажа Ирины Битюковой</div>
+    <h1>Четыре варианта главной страницы</h1>
+    <p class="lead">Ирина, здравствуйте! Вот четыре варианта главной страницы для вашего сайта. Все в тёмной тёплой гамме, как на сайте, который вам понравился, только цены и время здесь видны сразу. Откройте каждый и пролистайте до конца, лучше и на компьютере, и на телефоне: движение и 3D видно только в живом макете, на картинках их нет.</p>
+    <p class="note">Фото и видео пока со старого места. После съёмки в воскресенье поставлю новые кадры, а раскладка и анимация останутся. Цены, время процедур и список услуг взяты из вашего YCLIENTS, во всех вариантах они одинаковые. Напишите, какой вариант ближе. Если понравятся части из разных, их можно собрать вместе.</p>
+  </header>
+
+  <section class="variant" id="f-a014">
+    <div class="vhead"><h2><span class="letter">1</span>«Стена и свет»</h2><div class="score"></div></div>
+    <div class="shots">
+      <figure><img src="shots/final-a014-desk-first.jpg" alt="«Стена и свет»: первый экран на компьютере" width="1440" height="900" loading="lazy"><figcaption>Компьютер, первый экран</figcaption></figure>
+      <figure><img src="shots/final-a014-mob-first.jpg" alt="«Стена и свет»: первый экран на телефоне" width="780" height="1688" loading="lazy"><figcaption>Телефон</figcaption></figure>
+    </div>
+    <div class="actions"><a class="open" href="final/index.html">Открыть макет</a></div>
+    <details class="more"><summary>Подробнее</summary>
+      <p class="idea">На первом экране вы у стены студии, за вами крупно слово «Массаж». Стена в полутьме: где ведёте мышкой или пальцем, загорается тёплый свет и медленно гаснет. Сразу под первым экраном цены и время всех услуг, их можно отобрать по задаче. Дальше визит по шагам, бочку можно разобрать прокруткой, потом камни, мастера и сертификат.</p>
+      <div class="pros"><div><span>Чем хорош</span>Строгий и быстрый, на первом экране сразу вы. Кнопка записи всегда под рукой.</div><div><span>Что нужно со съёмки</span>Для света на стене нужны два кадра одной стены с одного штатива: с прибором и без.</div></div>
+      <figure class="extra"><img src="shots/final-a014-desk-full.jpg" alt="«Стена и свет»: вся страница" width="1029" height="9000" loading="lazy"><figcaption>Вся страница на компьютере, без движения</figcaption></figure>
+    </details>
+  </section>
+
+  <section class="variant" id="f-teplo">
+    <div class="vhead"><h2><span class="letter">2</span>«Тёплый вечер»</h2><div class="score"></div></div>
+    <div class="shots">
+      <figure><img src="shots/final-teplo-desk-first.jpg" alt="«Тёплый вечер»: первый экран на компьютере" width="1440" height="900" loading="lazy"><figcaption>Компьютер, первый экран</figcaption></figure>
+      <figure><img src="shots/final-teplo-mob-first.jpg" alt="«Тёплый вечер»: первый экран на телефоне" width="780" height="1688" loading="lazy"><figcaption>Телефон</figcaption></figure>
+    </div>
+    <div class="actions"><a class="open" href="final/m/teplo/index.html">Открыть макет</a></div>
+    <details class="more"><summary>Подробнее</summary>
+      <p class="idea">Первый экран как запотевшее стекло в бане, за паром горячие камни. Проведите пальцем или мышкой, стекло станет прозрачным, а потом снова запотеет. Дальше визит сценами: пар, чай, массаж, следующая открывается в проёме текущей. Перед стоунмассажем мимо камеры проходит тёплый камень и открывает новую главу.</p>
+      <div class="pros"><div><span>Чем хорош</span>Самый атмосферный и ближе всего к сайту, который вам нравится.</div><div><span>Что нужно со съёмки</span>Камни за стеклом пока общие, не из вашей студии. После съёмки поставлю ваши, ещё пригодятся вечерние кадры при свечах.</div></div>
+      <figure class="extra"><img src="shots/final-teplo-desk-full.jpg" alt="«Тёплый вечер»: вся страница" width="993" height="9000" loading="lazy"><figcaption>Вся страница на компьютере, без движения</figcaption></figure>
+    </details>
+  </section>
+
+  <section class="variant" id="f-zhurnal">
+    <div class="vhead"><h2><span class="letter">3</span>«Журнал»</h2><div class="score"></div></div>
+    <div class="shots">
+      <figure><img src="shots/final-zhurnal-desk-first.jpg" alt="«Журнал»: первый экран на компьютере" width="1440" height="900" loading="lazy"><figcaption>Компьютер, первый экран</figcaption></figure>
+      <figure><img src="shots/final-zhurnal-mob-first.jpg" alt="«Журнал»: первый экран на телефоне" width="780" height="1688" loading="lazy"><figcaption>Телефон</figcaption></figure>
+    </div>
+    <div class="actions"><a class="open" href="final/m/zhurnal/index.html">Открыть макет</a></div>
+    <details class="more"><summary>Подробнее</summary>
+      <p class="idea">Страница дышит вместе с человеком: кадр, где вы наливаете чай, медленно приближается на вдохе и отдаляется на выдохе, а кольцо подсказывает «Вдох» и «Выдохните». Дальше оглавление из шести глав, текст про бочку закрывается полосками, бочку можно покрутить мышкой или пальцем, портреты мастеров меняются полосками.</p>
+      <div class="pros"><div><span>Чем хорош</span>Самый необычный, такой сайт запоминают.</div><div><span>Что нужно со съёмки</span>Для обложки нужен спокойный кадр с чаем в тёплом свете, где сверху остаётся место под название.</div></div>
+      <figure class="extra"><img src="shots/final-zhurnal-desk-full.jpg" alt="«Журнал»: вся страница" width="1120" height="9000" loading="lazy"><figcaption>Вся страница на компьютере, без движения</figcaption></figure>
+    </details>
+  </section>
+
+  <section class="variant" id="f-kamen">
+    <div class="vhead"><h2><span class="letter">4</span>«Живой камень»</h2><div class="score"></div></div>
+    <div class="shots">
+      <figure><img src="shots/final-kamen-desk-first.jpg" alt="«Живой камень»: первый экран на компьютере" width="1440" height="900" loading="lazy"><figcaption>Компьютер, первый экран</figcaption></figure>
+      <figure><img src="shots/final-kamen-mob-first.jpg" alt="«Живой камень»: первый экран на телефоне" width="780" height="1688" loading="lazy"><figcaption>Телефон</figcaption></figure>
+    </div>
+    <div class="actions"><a class="open" href="final/m/kamen/index.html">Открыть макет</a></div>
+    <details class="more"><summary>Подробнее</summary>
+      <p class="idea">На первом экране круг, в нём 3D-фильм: горячие камни в масле на льне, капля масла, пар. При прокрутке круг раскрывается на весь экран, и камера едет вдоль камней. Визит листается лентой, мастера крупными портретами.</p>
+      <div class="pros"><div><span>Чем хорош</span>С первого взгляда видно стоунмассаж, и такого фильма нет у других студий.</div><div><span>Что нужно со съёмки</span>Фильм сделан в 3D, это не съёмка вашей студии. На съёмке можно так же снять ваши камни сбоку при тёплом свете.</div></div>
+      <figure class="extra"><img src="shots/final-kamen-desk-full.jpg" alt="«Живой камень»: вся страница" width="1200" height="7429" loading="lazy"><figcaption>Вся страница на компьютере, без движения</figcaption></figure>
+    </details>
+  </section>
+
+  <footer>
+    <div>Все снимки — эскизы на временных фото. Финальная графика, 3D и анимация делаются на новой съёмке.</div>
+    <div>Запись во всех макетах ведёт в YCLIENTS студии. Цены взяты из YCLIENTS 16.11.2026.</div>
+  </footer>
+</div>
+</body>
+</html>

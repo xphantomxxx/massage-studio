@@ -1,0 +1,53 @@
+
+@font-face{font-family:"RF Display";src:url(../assets/fonts/rflex-display.woff2) format("woff2");font-weight:200 360;font-stretch:130% 151%;font-display:swap}
+@font-face{font-family:"RF Text";src:url(../assets/fonts/rflex-text.woff2) format("woff2");font-weight:300 600;font-stretch:100% 151%;font-display:swap}
+
+@font-face{font-family:"RF fb";src:local(Arial),local("Helvetica Neue");ascent-override:92.8%;descent-override:24.4%;line-gap-override:0%;size-adjust:104%}
+@font-face{font-family:"RF wide fb";src:local(Verdana),local(Arial);ascent-override:92.8%;descent-override:24.4%;line-gap-override:0%;size-adjust:96%}
+
+:root{
+  
+  --a-bg:#231C17;--a-bg-2:#2A221C;--a-bg-3:#3A2E25;--a-olive:#3E4636;--a-olive-d:#2B3125;--a-olive-l:#DCE2D5;--a-cream:#F5F1E8;
+  --a-ink:#E9E2D5;--a-ink-2:#CFC6B6;--a-ink-3:#A99F8F;--a-line:rgba(233,226,213,.16);--a-line-2:rgba(233,226,213,.32);
+  --a-cta:#E0D8C4;--a-cta-h:#EDE6D6;--a-cta-ink:#2A211B;--a-accent:#0ABAB5;
+  --a-paper:#F2EDE4;--a-paper-ink:#2A211B;--a-paper-ink-2:#5B4E43;--a-paper-line:rgba(42,33,27,.14);
+  
+  --a-display:"RF Display","RF wide fb",Verdana,sans-serif;--a-text:"RF Text","RF fb",Arial,sans-serif;
+  
+  --a-h1:clamp(40px,5.4vw + 6px,84px);--a-h2:clamp(32px,3.4vw + 8px,56px);--a-h3:clamp(21px,1.1vw + 10px,26px);
+  --a-body:clamp(16px,.2vw + 15px,17px);--a-small:13px;
+  --a-gut:clamp(20px,4.4vw,64px);--a-sec:clamp(88px,11vw,168px);--a-max:1312px;
+  
+  --a-e-resp:cubic-bezier(.23,1,.32,1);--a-e-line:cubic-bezier(.35,0,0,1);--a-e-soft:cubic-bezier(.33,1,.68,1);
+}
+
+
+.a-display,.a-h1{font-family:var(--a-display);font-weight:260;font-stretch:151%;font-size:var(--a-h1);line-height:1.06;letter-spacing:-.012em;text-wrap:balance}
+.a-h2{font-family:var(--a-display);font-weight:270;font-stretch:151%;font-size:var(--a-h2);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+.a-h3{font-family:var(--a-display);font-weight:340;font-stretch:140%;font-size:var(--a-h3);line-height:1.2;letter-spacing:0}
+.a-body{font-family:var(--a-text);font-weight:360;font-stretch:112%;font-size:var(--a-body);line-height:1.62}
+.a-small{font-family:var(--a-text);font-weight:400;font-stretch:130%;font-size:var(--a-small);line-height:1.45;letter-spacing:.04em}
+.a-num{font-family:var(--a-display);font-weight:240;font-stretch:151%;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em}
+
+
+.a-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 30px;border:0;border-radius:2px;
+  background:var(--a-cta);color:var(--a-cta-ink);font:540 14px/1 var(--a-text);font-stretch:140%;letter-spacing:.06em;text-decoration:none;cursor:pointer;
+  transition:background-color 200ms var(--a-e-resp),transform 160ms var(--a-e-resp)}
+.a-btn:hover{background:var(--a-cta-h)}
+.a-btn:active{transform:scale(.98)}
+.a-btn-ghost{background:transparent;color:var(--a-ink);box-shadow:inset 0 0 0 1px var(--a-line-2)}
+.a-btn-ghost:hover{background:rgba(233,226,213,.08)}
+.a-link{color:inherit;font:420 14px/1.2 var(--a-text);font-stretch:140%;letter-spacing:.06em;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:6px;text-decoration-color:var(--a-line-2);transition:text-decoration-color 200ms}
+.a-link:hover{text-decoration-color:currentColor}
+:where(a,button,summary,[tabindex]):focus-visible{outline:2px solid var(--a-accent);outline-offset:3px}
+.a-paper :where(a,button,summary,[tabindex]):focus-visible{outline-color:var(--a-paper-ink)}   
+
+
+.a-rule{display:block;width:56px;height:1px;background:var(--a-accent)}
+.a-light{background:radial-gradient(90% 70% at 78% 18%,rgba(224,170,110,.16),transparent 62%),radial-gradient(70% 60% at 10% 100%,rgba(58,46,37,.9),transparent 70%),var(--a-bg)}
+.a-grain{position:relative;isolation:isolate}
+.a-grain::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.a-paper{background:var(--a-paper);color:var(--a-paper-ink)}
+@media (prefers-reduced-motion:reduce){.a-btn,.a-link{transition:none}}
